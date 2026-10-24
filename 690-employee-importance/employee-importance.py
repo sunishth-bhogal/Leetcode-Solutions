@@ -15,11 +15,9 @@ class Solution:
         
         def dfs(eid):
             emp = lookup[eid]
-            total = emp.importance 
+            total = emp.importance
             for sub in emp.subordinates:
                 total += dfs(sub)
             return total
         
-        return dfs(id)
-
-        
+        return(dfs(id))
