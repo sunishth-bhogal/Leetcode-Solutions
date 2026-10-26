@@ -10,18 +10,27 @@ class Solution:
             else:
                 combined.append(nums2[j])
                 j += 1
-
+        
         combined += nums1[i:]
         combined += nums2[j:]
 
         len_of_array = len(combined)
 
         if len_of_array % 2 == 0:
-            mid1 = combined[(len_of_array//2) - 1]
-            mid2 = combined[(len_of_array//2)]
-            median = (mid1 + mid2)/2
-        else: 
-            median = combined[(len_of_array//2)]
+            mid1 = combined[(len_of_array // 2) - 1]
+            mid2 = combined[(len_of_array // 2)]
+            median = (mid1 + mid2) / 2
+        else:
+            median = combined[(len_of_array // 2)]
         
         return median
+
+
+
+
+    # Start with the median part of it 
+    # mid1 and mid2 
+    # If not using sorted we must make our own
+    # - Empty list for combined, and i = j = 0
+
         
