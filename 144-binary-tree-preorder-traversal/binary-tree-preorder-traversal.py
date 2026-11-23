@@ -9,10 +9,16 @@ class Solution:
         if not root:
             return []
 
-        traversal = [root.val]
+        stack  = [root]
+        result = []
 
-        traversal = traversal + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
+        while stack:
+            node = stack.pop()
+            result.append(node.val)
 
-        return traversal
-
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
         
+        return result
