@@ -10,15 +10,16 @@ class Solution:
             return None
 
         root = TreeNode(preorder[0])
-        
+
         smaller = []
         bigger = []
+
         for number in preorder[1:]:
             if number < root.val:
                 smaller.append(number)
             else:
                 bigger.append(number)
-
+        
         root.left = self.bstFromPreorder(smaller)
         root.right = self.bstFromPreorder(bigger)
 
